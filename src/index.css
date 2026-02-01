@@ -1,0 +1,58 @@
+/* ========== Brand Variables ========== */
+:root {
+  --navy: #0b1d3a;
+  --yellow: #f4c430;
+  --cream: #f9f7f2;
+
+  font-family: "Segoe UI", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== Body ========== */
+body {
+  background-color: var(--cream);
+  color: var(--navy);
+  min-height: 100vh;
+}
+
+/* ========== Headings ========== */
+h1, h2, h3 {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ========== Links ========== */
+a {
+  color: var(--yellow);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+/* ========== Buttons ========== */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
