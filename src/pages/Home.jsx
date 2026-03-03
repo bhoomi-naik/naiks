@@ -69,7 +69,6 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          {/* Article Image */}
           <div style={{ flex: "1 1 400px", maxWidth: "500px" }}>
             <a
               href="https://www.mid-day.com/mumbai-guide/mumbai-food/article/net-gains-in-khotachiwadi-23330833"
@@ -95,7 +94,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Summary */}
           <div style={{ flex: "1 1 500px", maxWidth: "600px" }}>
             <p
               style={{
@@ -109,9 +107,6 @@ export default function Home() {
               highlighting how Rajesh and Darshana Naik bring the legacy of the
               Anantashram menu to their intimate kitchen in Girgaon at the
               entrance of Khotachiwadi.
-              <br /><br />
-              The article captures their journey, heritage, and dedication to
-              preserving authentic coastal flavours.
             </p>
 
             <a
@@ -130,6 +125,70 @@ export default function Home() {
             >
               Read Full Article →
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= MENU SECTION ================= */}
+      <section
+        id="menu"
+        style={{
+          padding: "120px clamp(16px, 6vw, 100px)",
+          backgroundColor: "var(--cream)",
+          scrollMarginTop: "90px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "42px",
+            marginBottom: "60px",
+            textAlign: "center",
+            color: "var(--navy)",
+          }}
+        >
+          Our Menu
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "60px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {/* English Menu */}
+          <div style={{ flex: "1 1 400px", maxWidth: "650px" }}>
+            <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+              Menu (English)
+            </h3>
+
+            <img
+              src="/menu-en.jpg"
+              alt="Naik's Kitchen Menu English"
+              style={{
+                width: "100%",
+                borderRadius: "12px",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+              }}
+            />
+          </div>
+
+          {/* Marathi Menu */}
+          <div style={{ flex: "1 1 400px", maxWidth: "650px" }}>
+            <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+              मेनू (मराठी)
+            </h3>
+
+            <img
+              src="/menu-mr.jpg"
+              alt="Naik's Kitchen Menu Marathi"
+              style={{
+                width: "100%",
+                borderRadius: "12px",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+              }}
+            />
           </div>
         </div>
       </section>
@@ -153,14 +212,12 @@ export default function Home() {
             gap: "20px",
           }}
         >
-          {/* Left Side */}
           <div style={{ fontSize: "14px", opacity: 0.8 }}>
             © {new Date().getFullYear()} Naik’s. All Rights Reserved.
             <br />
             Designed with passion in Mumbai.
           </div>
 
-          {/* Right Side Social Links */}
           <div style={{ display: "flex", gap: "20px" }}>
             <a
               href="https://wa.me/919221179999"
