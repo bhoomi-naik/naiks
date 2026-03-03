@@ -12,6 +12,20 @@ export default function Home() {
     transition: "opacity 0.3s ease",
   };
 
+  const reelWrapper = {
+    backgroundColor: "white",
+    borderRadius: "24px",
+    padding: "20px",
+    boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
+  };
+
+  const reelFrame = {
+    width: "100%",
+    height: "480px",
+    borderRadius: "20px",
+    border: "none",
+  };
+
   return (
     <>
       {/* ================= LOGO SECTION ================= */}
@@ -82,14 +96,7 @@ export default function Home() {
                   width: "100%",
                   borderRadius: "16px",
                   boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                  transition: "transform 0.3s ease",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.03)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
               />
             </a>
           </div>
@@ -157,12 +164,10 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          {/* English Menu */}
           <div style={{ flex: "1 1 400px", maxWidth: "650px" }}>
             <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
               Menu (English)
             </h3>
-
             <img
               src="/menu-en.jpg"
               alt="Naik's Kitchen Menu English"
@@ -174,12 +179,10 @@ export default function Home() {
             />
           </div>
 
-          {/* Marathi Menu */}
           <div style={{ flex: "1 1 400px", maxWidth: "650px" }}>
             <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
               मेनू (मराठी)
             </h3>
-
             <img
               src="/menu-mr.jpg"
               alt="Naik's Kitchen Menu Marathi"
@@ -188,6 +191,62 @@ export default function Home() {
                 borderRadius: "12px",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ================= INSTAGRAM SECTION ================= */}
+      <section
+        style={{
+          padding: "120px clamp(20px, 6vw, 100px)",
+          backgroundColor: "#f6f3ee",
+        }}
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "42px",
+            marginBottom: "80px",
+            color: "var(--navy)",
+          }}
+        >
+          From Our Instagram
+        </h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "60px",
+            maxWidth: "1100px",
+            margin: "0 auto",
+          }}
+        >
+          <div style={reelWrapper}>
+            <iframe
+              src="https://www.instagram.com/reel/DT7KrLSCOcJ/embed"
+              style={reelFrame}
+              scrolling="no"
+              allowTransparency="true"
+            />
+          </div>
+
+          <div style={reelWrapper}>
+            <iframe
+              src="https://www.instagram.com/reel/DSNQo6UEquX/embed"
+              style={reelFrame}
+              scrolling="no"
+              allowTransparency="true"
+            />
+          </div>
+
+          <div style={reelWrapper}>
+            <iframe
+              src="https://www.instagram.com/reel/DVQtrJdiInZ/embed"
+              style={reelFrame}
+              scrolling="no"
+              allowTransparency="true"
             />
           </div>
         </div>
@@ -219,30 +278,13 @@ export default function Home() {
           </div>
 
           <div style={{ display: "flex", gap: "20px" }}>
-            <a
-              href="https://wa.me/919221179999"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={footerLink}
-            >
+            <a href="https://wa.me/919221179999" target="_blank" rel="noopener noreferrer" style={footerLink}>
               WhatsApp
             </a>
-
-            <a
-              href="https://www.instagram.com/naiks.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={footerLink}
-            >
+            <a href="https://www.instagram.com/naiks.in/" target="_blank" rel="noopener noreferrer" style={footerLink}>
               Instagram
             </a>
-
-            <a
-              href="https://www.facebook.com/NaiksGirgaon"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={footerLink}
-            >
+            <a href="https://www.facebook.com/NaiksGirgaon" target="_blank" rel="noopener noreferrer" style={footerLink}>
               Facebook
             </a>
           </div>

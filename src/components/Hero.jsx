@@ -1,3 +1,5 @@
+import nameLogo from "../assets/name.png";
+
 export default function Hero() {
   return (
     <section
@@ -8,66 +10,46 @@ export default function Hero() {
         flexWrap: "wrap",
       }}
     >
-      {/* LEFT – Text */}
+      {/* LEFT – Brand */}
       <div
         style={{
           flex: "1 1 500px",
-          padding: "clamp(40px, 6vw, 100px)",
-          backgroundColor: "#f6f3ee", // Beige
+          padding: "clamp(60px, 8vw, 120px)",
+          backgroundColor: "#f6f3ee",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <h1
+        <img
+          src={nameLogo}
+          alt="Naik's"
           style={{
-            fontSize: "clamp(42px, 5vw, 72px)",
-            marginBottom: "24px",
-            backgroundColor: "#f6f3ee",
-            letterSpacing: "3px",
-            animation: "fadeUp 1.2s ease forwards",
+            width: "420px",
+            maxWidth: "100%",
+            height: "auto",
+            marginBottom: "50px",
           }}
-        >
-          NAIKS
-        </h1>
+        />
 
         <p
           style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
-            lineHeight: "1.6",
-            maxWidth: "480px",
-            marginBottom: "36px",
-            color: "#444",
+            fontSize: "clamp(18px, 2vw, 20px)",
+            lineHeight: "1.8",
+            maxWidth: "500px",
+            color: "#3d3d3d",
+            fontWeight: "400",
           }}
         >
-          Savour the flavours of Goa at our cozy restaurant.
+          Savour the authentic flavours of Goa in our intimate heritage kitchen.
         </p>
-
-        <button
-          style={{
-            width: "fit-content",
-            padding: "14px 36px",
-            fontSize: "16px",
-            backgroundColor: "var(--yellow)",
-            color: "var(--navy)",
-            border: "none",
-            borderRadius: "6px",
-            fontWeight: "600",
-            cursor: "pointer",
-            transition: "transform 0.2s ease",
-          }}
-          onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
-          onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-        >
-          Explore Our Menu
-        </button>
       </div>
 
       {/* RIGHT – Image */}
       <div
         style={{
           flex: "1 1 600px",
-          minHeight: "400px",
+          minHeight: "500px",
         }}
       >
         <img
