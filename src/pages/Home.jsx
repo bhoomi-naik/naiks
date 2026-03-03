@@ -91,7 +91,7 @@ export default function Home() {
             >
               <img
                 src="/article.png"
-                alt="Naik Kitchen featured in Mid-Day"
+                alt="Naik's featured in Mid-Day"
                 style={{
                   width: "100%",
                   borderRadius: "16px",
@@ -110,7 +110,7 @@ export default function Home() {
                 marginBottom: "30px",
               }}
             >
-              Naik Kitchen was recently featured in <strong>Mid-Day</strong>,
+              Naiks was recently featured in <strong>Mid-Day</strong>,
               highlighting how Rajesh and Darshana Naik bring the legacy of the
               Anantashram menu to their intimate kitchen in Girgaon at the
               entrance of Khotachiwadi.
