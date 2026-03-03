@@ -7,10 +7,10 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // scrolling down → hide navbar
+        // Scrolling down → hide navbar
         setShow(false);
       } else {
-        // scrolling up → show navbar
+        // Scrolling up → show navbar
         setShow(true);
       }
       setLastScrollY(window.scrollY);
@@ -23,41 +23,31 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        padding: "20px clamp(24px, 6vw, 64px)",
+        padding: "28px 0",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "var(--navy)",
-        color: "white",
+        gap: "clamp(24px, 6vw, 60px)",
         position: "fixed",
-        top: show ? "0" : "-90px",
+        top: show ? "0" : "-100px",
         left: 0,
         right: 0,
         zIndex: 1000,
+        backgroundColor: "transparent",
         transition: "top 0.4s ease",
       }}
     >
-      {/* Logo */}
-      <div
-        style={{
-          fontWeight: "700",
-          fontSize: "22px",
-          color: "var(--yellow)",
-        }}
-      >
-        Naiks
-      </div>
-
-      {/* Navigation Links */}
-      <div style={{ display: "flex", gap: "32px", fontWeight: 500 }}>
-        <a href="#menu" style={{ color: "white", textDecoration: "none" }}>
-          Menu
-        </a>
-
-        <a href="#contact" style={{ color: "white", textDecoration: "none" }}>
-          Contact
-        </a>
-      </div>
+      <a href="#about" style={linkStyle}>About Us</a>
+      <a href="#menu" style={linkStyle}>Menu</a>
+      <a href="#contact" style={linkStyle}>Contact</a>
     </nav>
   );
 }
+
+const linkStyle = {
+  color: "var(--navy)",
+  textDecoration: "none",
+  fontSize: "clamp(14px, 2vw, 18px)",
+  letterSpacing: "1px",
+  fontWeight: 500,
+};

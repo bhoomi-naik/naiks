@@ -3,42 +3,40 @@ export default function Hero() {
     <section
       style={{
         display: "flex",
-        minHeight: "90vh",
+        minHeight: "100vh",
         width: "100%",
         flexWrap: "wrap",
       }}
     >
-      {/* LEFT – Text (smaller) */}
+      {/* LEFT – Text */}
       <div
         style={{
-          flex: "0 1 40%",
-          padding: "clamp(32px, 6vw, 80px)",
-          backgroundColor: "var(--cream)",
+          flex: "1 1 500px",
+          padding: "clamp(40px, 6vw, 100px)",
+          backgroundColor: "#f6f3ee", // Beige
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
         <h1
-  style={{
-    fontSize: "clamp(48px, 6vw, 72px)",
-    marginBottom: "20px",
-    color: "var(--navy)",
-    letterSpacing: "2px",
-    opacity: 0,
-    animation: "fadeUp 1.2s ease forwards",
-  }}
->
-  NAIKS
-</h1>
-
+          style={{
+            fontSize: "clamp(42px, 5vw, 72px)",
+            marginBottom: "24px",
+            backgroundColor: "#f6f3ee",
+            letterSpacing: "3px",
+            animation: "fadeUp 1.2s ease forwards",
+          }}
+        >
+          NAIKS
+        </h1>
 
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2vw, 18px)",
             lineHeight: "1.6",
-            maxWidth: "420px",
-            marginBottom: "32px",
+            maxWidth: "480px",
+            marginBottom: "36px",
             color: "#444",
           }}
         >
@@ -56,17 +54,20 @@ export default function Hero() {
             borderRadius: "6px",
             fontWeight: "600",
             cursor: "pointer",
+            transition: "transform 0.2s ease",
           }}
+          onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
+          onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
         >
           Explore Our Menu
         </button>
       </div>
 
-      {/* RIGHT – Image (dominant) */}
+      {/* RIGHT – Image */}
       <div
         style={{
-          flex: "1 1 60%",
-          minHeight: "500px",
+          flex: "1 1 600px",
+          minHeight: "400px",
         }}
       >
         <img

@@ -21,23 +21,34 @@ body {
   background-color: var(--cream);
   color: var(--navy);
   min-height: 100vh;
+  overflow-x: hidden; /* prevents horizontal scroll on mobile */
 }
 
-/* ========== Headings ========== */
-h1, h2, h3 {
-  color: var(--navy);
+/* ========== Responsive Typography ========== */
+h1 {
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
 }
 
 /* ========== Links ========== */
 a {
-  color: var(--yellow);
   text-decoration: none;
   font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
 a:hover {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 /* ========== Buttons ========== */
@@ -45,13 +56,41 @@ button {
   font-family: inherit;
   cursor: pointer;
   border-radius: 6px;
+  transition: all 0.3s ease;
 }
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ========== Animations ========== */
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
   to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
