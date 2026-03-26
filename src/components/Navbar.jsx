@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./navbar.css"; // 👈 import CSS
+import { useLocation, useNavigate } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // 🔥 SCROLL SHOW/HIDE
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setShow(false); // hide
+        setShow(false);
       } else {
-        setShow(true); // show
+        setShow(true);
       }
       setLastScrollY(window.scrollY);
     };
@@ -19,6 +23,20 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // 🔥 SMART NAVIGATION FUNCTION
+  const handleNavClick = (id) => {
+    if (location.pathname === "/") {
+      // Already on home → scroll
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // From another page → go home + scroll
+      navigate(`/#${id}`);
+    }
+  };
 
   return (
     <nav
@@ -37,10 +55,22 @@ export default function Navbar() {
         transition: "top 0.4s ease",
       }}
     >
-      <Link to="/#about" className="nav-link">About Us</Link>
-<Link to="/#menu" className="nav-link">Menu</Link>
-<Link to="/#contact" className="nav-link">Contact</Link>
-<Link to="/blog" className="nav-link">Blogs</Link>
+      {/* 👇 UPDATED LINKS */}
+      <span onClick={() => handleNavClick("about")} className="nav-link">
+        About Us
+      </span>
+
+      <span onClick={() => handleNavClick("menu")} className="nav-link">
+        Menu
+      </span>
+
+      <span onClick={() => handleNavClick("contact")} className="nav-link">
+        Contact
+      </span>
+
+      <span onClick={() => navigate("/blog")} className="nav-link">
+        Blogs
+      </span>
     </nav>
   );
 }

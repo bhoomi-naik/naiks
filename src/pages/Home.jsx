@@ -256,6 +256,7 @@ export default function Home() {
 
       {/* ================= FOOTER ================= */}
       <footer
+      id="contact"
         style={{
           backgroundColor: "#081426",
           color: "white",

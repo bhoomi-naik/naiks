@@ -5,9 +5,11 @@ const posts = [
   {
     slug: "legacy-naiks",
     date: "March 2026",
-    title: "The Legacy Lives On: A Warm Welcome from Our Cosy Restaurant to Yours!",
-    image: "/thumbnail.png",
-    images: ["/blog1.png", "/blog2.png", "/blog3.png"],
+    title:
+      "The Legacy Lives On: A Warm Welcome from Our Cosy Restaurant to Yours!",
+    images: ["/blog0.png", "/blog1.png", "/blog2.png", "/blog3.png"],
+
+    video: "https://youtu.be/iZLNWG1JzD4?si=MNPoB2LVPIo-LxsC",
 
     content: `Namaskar! We are Rajesh and Darshana Naik, and we are so excited to welcome you to Naik’s.
 If you’ve lived in Mumbai or visited the lanes of Girgaon, you likely remember the name Anant Ashram. For decades, it was the gold standard for Goan and Gomantak seafood. When it closed in 2007, it left a void in the hearts (and stomachs) of many. As long-time family friends of the original owners, we felt a calling to bring those legendary flavors back to life.
@@ -30,8 +32,7 @@ As Kunal says, this is "heritage flavors" at their best. Come visit us in Nikadw
 Eat well, stay happy, and we’ll see you soon!
 — Rajesh & Darshana Naik
 Watch the full feature of our restaurant here:
-
-Video link: https://www.youtube.com/watch?v=9n2sXo7l8j8`
+CLICK ON THE IMAGE BELOW TO WATCH Kunal’s FULL VISIT TO NAIK’s ON YouTube!`
   }
 ];
 
@@ -62,18 +63,12 @@ export default function BlogPost() {
           padding: "100px 10%",
           background: "#faf7f2",
           flexWrap: "wrap",
-          alignItems: "flex-start",
+          alignItems: "flex-start"
         }}
       >
         {/* LEFT TEXT */}
         <div style={{ flex: "1 1 500px" }}>
-          <h1
-            style={{
-              fontSize: "42px",
-              marginBottom: "10px",
-              color: "#0f172a",
-            }}
-          >
+          <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
             {post.title}
           </h1>
 
@@ -86,51 +81,48 @@ export default function BlogPost() {
               fontSize: "18px",
               lineHeight: "1.9",
               color: "#444",
-              whiteSpace: "pre-line",
+              whiteSpace: "pre-line"
             }}
           >
             {post.content}
           </div>
 
+          {/* VIDEO THUMBNAIL AT BOTTOM */}
           <div style={{ marginTop: "40px" }}>
-            <Link
-              to="/blog"
+            <a
+              href={post.video}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                color: "#c89b63",
-                textDecoration: "none",
-                fontWeight: "500",
+                display: "block",
+                maxWidth: "500px"
               }}
             >
-              ← Back to Blog
-            </Link>
+              <img
+                src="/thumbnail.png"  // ✅ fixed thumbnail
+                alt="Watch Video"
+                style={{
+                  width: "100%",
+                  borderRadius: "16px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                  cursor: "pointer"
+                }}
+              />
+            </a>
           </div>
         </div>
 
         {/* RIGHT IMAGES */}
         <div style={{ flex: "1 1 400px" }}>
-          {/* MAIN IMAGE */}
-          <img
-            src={post.image}
-            alt="Main"
-            style={{
-              width: "100%",
-              borderRadius: "16px",
-              marginBottom: "20px",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-            }}
-          />
-
-          {/* STACKED IMAGES */}
           {post.images.map((img, i) => (
             <img
               key={i}
               src={img}
-              alt="extra"
+              alt="blog"
               style={{
                 width: "100%",
                 borderRadius: "16px",
-                marginBottom: "20px",
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                marginBottom: "20px"
               }}
             />
           ))}
