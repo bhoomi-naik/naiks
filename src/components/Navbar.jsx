@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./navbar.css"; // 👈 import CSS
 
 export default function Navbar() {
   const [show, setShow] = useState(true);
@@ -7,11 +9,9 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // Scrolling down → hide navbar
-        setShow(false);
+        setShow(false); // hide
       } else {
-        // Scrolling up → show navbar
-        setShow(true);
+        setShow(true); // show
       }
       setLastScrollY(window.scrollY);
     };
@@ -37,17 +37,10 @@ export default function Navbar() {
         transition: "top 0.4s ease",
       }}
     >
-      <a href="#about" style={linkStyle}>About Us</a>
-      <a href="#menu" style={linkStyle}>Menu</a>
-      <a href="#contact" style={linkStyle}>Contact</a>
+      <Link to="/#about" className="nav-link">About Us</Link>
+<Link to="/#menu" className="nav-link">Menu</Link>
+<Link to="/#contact" className="nav-link">Contact</Link>
+<Link to="/blog" className="nav-link">Blogs</Link>
     </nav>
   );
 }
-
-const linkStyle = {
-  color: "var(--navy)",
-  textDecoration: "none",
-  fontSize: "clamp(14px, 2vw, 18px)",
-  letterSpacing: "1px",
-  fontWeight: 500,
-};

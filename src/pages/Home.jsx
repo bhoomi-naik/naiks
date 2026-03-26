@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import logo from "../assets/logo.png";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Home() {
 
@@ -274,7 +276,7 @@ export default function Home() {
           <div style={{ fontSize: "14px", opacity: 0.8 }}>
             © {new Date().getFullYear()} Naik’s. All Rights Reserved.
             <br />
-            Designed with passion in Mumbai.
+            Designed with passion in Girgaon,Mumbai.
           </div>
 
           <div style={{ display: "flex", gap: "20px" }}>

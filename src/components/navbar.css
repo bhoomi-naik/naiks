@@ -1,0 +1,30 @@
+.nav-link {
+  position: relative;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: clamp(14px, 2vw, 18px);
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #c89b63; /* gold tone */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* color change */
+.nav-link:hover {
+  color: #c89b63;
+}
